@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+    دسته بندی ها:
+    <a href="{% url 'products_list' %}">همه</a>
+    {% for category in categories %}
+        <a href="{% url 'products_list' %}?category={{ category.name }}"><span>
+            <u>{{ category.name }}</u> ,
+        </span></a>
+    {% endfor %}
+
+    {% for product in products %}
+        <h2><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h2>
+        <p>{{ product.price }}</p>
+    {% endfor %}
+    <br>
+    {% if products.has_previous %}
+        <a href="{% url 'products_list' %}?page={{ products.previous_page_number }}">Previous</a>
+    {% endif %}
+    <span><p>{{ products.number }}</p></span>
+    {% if products.has_next %}
+        <span><a href="{% url 'products_list' %}?page={{ products.next_page_number }}">Next</a></span>
+    {% endif %}
+    <br>
+    <a href="{% url 'home' %}">Back To Home</a>
+{% endblock content %}

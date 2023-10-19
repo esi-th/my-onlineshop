@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block title %}{{ product.title }} Description{% endblock %}
+
+{% block content %}
+    <img src="{{ product.cover.url }}">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.description }}</p>
+    <p>{{ product.price }}</p>
+        <br>
+    {% for comment in product.comments.all %}
+        <p>{{ comment.author }} | {{ comment.datetime_modified }}</p>
+        <p>{{ comment.body }}</p>
+    {% endfor %}
+    <br>
+    <form method="POST" action="{% url 'comment_create' product.id %}">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="submit" value="Send Comment">
+    </form>
+    <a href="{% url 'products_list' %}">{% trans 'Back To Products' %}</a>
+{% endblock content %}

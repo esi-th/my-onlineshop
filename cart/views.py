@@ -32,7 +32,6 @@ def add_to_cart_view(request, product_id):
         cleaned_data = form.cleaned_data
         quantity = cleaned_data['quantity']
         cart.add(product, quantity, replace_quantity=cleaned_data['inplace'])
-        messages.success(request, _('Product Has Successfully Added To Your Cart.'))
 
     return redirect('products_list')
 
@@ -42,7 +41,6 @@ def remove_from_cart_view(request, product_id):
 
     product = get_object_or_404(Product, id=product_id)
     cart.remove(product)
-    messages.success(request, _('Product Has Successfully Removed From Your Cart.'))
 
     return redirect('cart:cart_detail')
 

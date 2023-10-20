@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-14 01:13-0700\n"
+"PO-Revision-Date: 2023-10-14 12:38+0330\n"
+"Last-Translator: شسیشس شسیشسی <esi@esi.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.9\n"
+
+#: .\models.py:11
+msgid "Published"
+msgstr "منتشر شده"
+
+#: .\models.py:12
+msgid "Draft"
+msgstr "پیش نویس"
+
+#: .\models.py:14
+msgid "Post Author"
+msgstr "نویسنده پست"
+
+#: .\models.py:15
+msgid "Post Title"
+msgstr "عنوان پست"
+
+#: .\models.py:16
+msgid "Post Description"
+msgstr "توضیحات پست"
+
+#: .\models.py:17
+msgid "Post Status"
+msgstr "وضعیت پست"
+
+#: .\models.py:18
+msgid "Post Cover"
+msgstr "کاور پست"
+
+#: .\models.py:19 .\models.py:34
+msgid "Post Date Created"
+msgstr "تاریخ ایجاد پست"
+
+#: .\models.py:20 .\models.py:35
+msgid "Post Date Modified"
+msgstr "تاریخ تغییر پست"
+
+#: .\models.py:30
+msgid "Comment Author"
+msgstr "نویسنده کامنت"
+
+#: .\models.py:31
+msgid "Post"
+msgstr "پست"
+
+#: .\models.py:32
+msgid "Comment Text"
+msgstr "متن نظر"
+
+#: .\models.py:33
+msgid "Comment Status"
+msgstr "وضعیت نظر"
+
+#: .\templates\blog\post_detail.html:8
+msgid "Post Detail"
+msgstr "توضیحات پست"
+
+#: .\templates\blog\post_detail.html:32 .\templates\blog\posts_list.html:55
+msgid "Author"
+msgstr "نویسنده"
+
+#: .\templates\blog\post_detail.html:33 .\templates\blog\posts_list.html:56
+msgid "Published Date"
+msgstr "تاریخ انتشار"
+
+#: .\templates\blog\post_detail.html:45
+msgid "Comments"
+msgstr "کامنت ها"
+
+#: .\templates\blog\post_detail.html:84
+msgid "Comments For"
+msgstr "کامنت برای"
+
+#: .\templates\blog\post_detail.html:116
+msgid "Write Your Comment"
+msgstr "کامنت خود را بنویسید"
+
+#: .\templates\blog\post_detail.html:120
+msgid "Your Email Does Not Show For Others"
+msgstr "ایمیل شما برای دیگران نشان داده نمیشود"
+
+#: .\templates\blog\post_detail.html:123
+msgid "Your Comment Text"
+msgstr "متن نظر"
+
+#: .\templates\blog\post_detail.html:127
+msgid "Your Name"
+msgstr "اسم شما"
+
+#: .\templates\blog\post_detail.html:131
+msgid "Your Email"
+msgstr "ایمیل شما"
+
+#: .\templates\blog\post_detail.html:137
+msgid "Send"
+msgstr "ارسال"
+
+#: .\templates\blog\post_detail.html:144
+msgid "You Must Be Logged In To Post A Comment"
+msgstr "برای ارسال نظر ابتدا باید به حساب خود وارد شوید"
+
+#: .\templates\blog\post_detail.html:148
+msgid "Login"
+msgstr "ورود"
+
+#: .\templates\blog\post_detail.html:170 .\templates\blog\posts_list.html:107
+msgid "Enter Your Key Words In Box Below"
+msgstr "عبارت موردنظر خود را در باکس زیر وارد کنید"
+
+#: .\templates\blog\post_detail.html:173 .\templates\blog\posts_list.html:110
+msgid "Search in Products"
+msgstr "جستجو در محصولات"
+
+#: .\templates\blog\posts_list.html:8
+#| msgid "Post Title"
+msgid "Posts List"
+msgstr "پست ها"
+
+#: .\templates\blog\posts_list.html:22
+msgid "Show"
+msgstr "نمایش"
+
+#: .\templates\blog\posts_list.html:23
+msgid "From"
+msgstr "از"
+
+#: .\templates\blog\posts_list.html:61
+msgid "Read More"
+msgstr "ادامه مطلب"

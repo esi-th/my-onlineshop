@@ -1,0 +1,95 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Contact Us' %}{% endblock %}
+
+
+{% block content %}
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+        <!-- Main Content Wrapper Start -->
+        <div id="content" class="main-content-wrapper">
+            <div class="page-content-inner pt--75">
+                <div class="container">
+                    <div class="row pb--80">
+                        <div class="col-md-7 mb-sm--30">
+                            <h2 class="heading__secondary mb--50 mb-md--35 mb-sm--20">{% trans 'Leave Your Message' %}</h2>
+                            <!-- Contact form Start Here -->
+                            <form class="form" action="{% url 'contact' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form__group mb--20">
+                                    <input type="text" id="contact_name" name="first_name_last_name"
+                                           class="form__input form__input--2" placeholder="*{% trans 'Name And Last Name' %}">
+                                </div>
+                                <div class="form__group mb--20">
+                                    <input type="email" id="contact_email" name="email"
+                                           class="form__input form__input--2" placeholder="*{% trans 'Email' %}">
+                                </div>
+                                <div class="form__group mb--20">
+                                    <input type="text" id="contact_phone" name="phone_number"
+                                           class="form__input form__input--2" placeholder="*{% trans 'Phone Number' %}">
+                                </div>
+                                <div class="form__group mb--20">
+                                    <textarea class="form__input form__input--textarea" id="contact_notes"
+                                              name="contact_note" placeholder="*{% trans 'Your Message' %}"></textarea>
+                                </div>
+                                <div class="form__group">
+                                    <button type="submit" class="oval-button">{% trans 'Send' %}</button>
+                                </div>
+                            </form>
+                            <!-- Contact form end Here -->
+
+                        </div>
+                        <div class="col-md-5 pl--50 pl-sm--30">
+                            <h2 class="heading__secondary mb--50">اطلاعات تماس</h2>
+
+                            <!-- Contact info widget start here -->
+                            <div class="contact-info-widget mb--45">
+                                <div class="contact-info">
+                                    <h3 class="heading__tertiary">Github</h3>
+                                    <a href="https://github.com/esi-th">github.com/esi-th</a>
+
+                                </div>
+                            </div>
+                            <!-- Contact info widget end here -->
+
+                            <!-- Contact info widget start here -->
+                            <div class="contact-info-widget mb--45">
+                                <div class="contact-info">
+                                    <h3 class="heading__tertiary">ایمیل</h3>
+                                    <a href="mailto:esi.taheri@yahoo.com">esi.taheri@yahoo.com</a>
+                                </div>
+                            </div>
+                            <!-- Contact info widget end here -->
+
+                            <!-- Contact info widget start here -->
+                            <div class="contact-info-widget two-column-list sm-one-column mb--45">
+                                <div class="contact-info mb-sm--35">
+                                    <h3 class="heading__tertiary">شماره تماس</h3>
+                                    <a href="">989170612747+</a>
+                                </div>
+                                <div class="contact-info">
+                                    <h3 class="heading__tertiary">شهر</h3>
+                                    <p>شیراز</p>
+                                </div>
+                            </div>
+                            <!-- Contact info widget end here -->
+
+                            <!-- Social Icons Start Here -->
+                            <ul class="social social-sharing">
+                                <li class="social__item">
+                                    <a href="https://instagram.com/i_am_esi_" class="social__link instagram">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- Social Icons End Here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Wrapper Start -->
+    </div>
+    <!-- Main Wrapper End -->
+{% endblock %}

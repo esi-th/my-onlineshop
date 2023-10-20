@@ -1,0 +1,44 @@
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/iransansx/woff/IRANSansX-Regular.woff') format('woff'),
+	url('../fonts/iransansx/woff2/IRANSansX-Regular.woff2') format('woff2');
+}
+
+/* converting english numbers to persian numbers */
+.ss02 {
+    -moz-font-feature-settings: "ss02";
+    -webkit-font-feature-settings: "ss02";
+    font-feature-settings: "ss02";
+}
+
+body {
+    font-family: "IRANSansX", serif;
+    text-align:right !important;
+}
+.user-infoo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.btn-iconn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.oval-button {
+    background-color: #006fcd;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.oval-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}

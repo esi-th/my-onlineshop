@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'ckeditor',
     'jalali_date',
+    'rosetta',
 
     # local
     'accounts.apps.AccountsConfig',
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'persian_translate.apps.PersianTranslateConfig',
     'orders.apps.OrdersConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -159,7 +161,7 @@ LANGUAGES = (
     ('en', 'English'),
     ('fa', 'Farsi'),
 )
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'fa'
 
 TIME_ZONE = 'Asia/Tehran'
 USE_I18N = True

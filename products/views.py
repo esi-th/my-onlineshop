@@ -12,7 +12,7 @@ def products_list_view(request):
     if category is not None:
         products = Product.objects.filter(category__name=category)
     else:
-        products = Product.objects.all().order_by('datetime_modified')
+        products = Product.objects.all().order_by('-datetime_created')
 
     paginator = Paginator(products, 2)
     page_num = request.GET.get('page')

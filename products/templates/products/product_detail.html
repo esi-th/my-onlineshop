@@ -3,14 +3,24 @@
 {% load i18n %}
 {% block title %}{{ product.title }} Description{% endblock %}
 
+
 {% block content %}
+    {% if product.cover %}
     <img src="{{ product.cover.url }}">
+    {% endif %}
     <h2>{{ product.title }}</h2>
-    <p>{{ product.description }}</p>
+    <p>{{ product.description|safe }}</p>
     <p>{{ product.price }}</p>
-        <br>
+    <br>
+    <div>
+        <form action="{% url 'cart:cart_add' product.id %}" method="POST">
+            {% csrf_token %}
+            <input type="number" name="quantity">
+            <input type="submit" value="Add to Cart">
+        </form>
+    </div>
     {% for comment in product.comments.all %}
-        <p>{{ comment.author }} | {{ comment.datetime_modified }}</p>
+        <p>{{ comment.author }} | {{ comment.datetime_created }}</p>
         <p>{{ comment.body }}</p>
     {% endfor %}
     <br>

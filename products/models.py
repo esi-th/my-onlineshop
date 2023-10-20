@@ -1,6 +1,7 @@
 from django.db import models
 from django.shortcuts import reverse
 from django.utils.translation import gettext as _
+from ckeditor.fields import RichTextField
 from django.conf import settings
 
 
@@ -14,8 +15,8 @@ class Category(models.Model):
 
 class Product(models.Model):
     title = models.CharField(_('Title'), max_length=255)
-    short_description = models.TextField(_('Product Description'))
-    description = models.TextField('Product Short Description')
+    short_description = RichTextField(_('Product Description'))
+    description = RichTextField('Product Short Description')
     price = models.PositiveIntegerField(_('Price'))
     category = models.ForeignKey(Category, on_delete=models.PROTECT, verbose_name=_('Category'))
     cover = models.ImageField(_('Product Cover'), upload_to='covers/product_covers/')

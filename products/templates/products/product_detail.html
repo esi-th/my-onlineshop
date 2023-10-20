@@ -1,6 +1,7 @@
 {% extends '_base.html' %}
 {% load crispy_forms_tags %}
 {% load i18n %}
+{% load jalali_tags %}
 {% block title %}{{ product.title }} Description{% endblock %}
 
 
@@ -20,7 +21,7 @@
         </form>
     </div>
     {% for comment in product.comments.all %}
-        <p>{{ comment.author }} | {{ comment.datetime_created }}</p>
+        <p>{{ comment.author }} | {{ comment.datetime_created|to_jalali:'%Y %B %d' }}</p>
         <p>{{ comment.body }}</p>
     {% endfor %}
     <br>

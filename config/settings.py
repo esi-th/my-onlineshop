@@ -43,18 +43,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     # third party
     'allauth',
     'allauth.account',
     'crispy_forms',
     'crispy_bootstrap4',
+    'ckeditor',
+    'jalali_date',
 
     # local
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
+    'persian_translate.apps.PersianTranslateConfig',
 ]
 
 MIDDLEWARE = [
@@ -152,6 +156,11 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 LANGUAGE_CODE = 'en-us'
 
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Farsi'),
+)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -163,7 +172,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # media
 MEDIA_URL = 'media/'

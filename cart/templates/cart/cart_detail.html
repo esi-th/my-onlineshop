@@ -1,7 +1,8 @@
 {% extends '_base.html' %}
 {% load i18n %}
 {% block title %}Cart{% endblock %}
-
+{% load humanize %}
+{% load persian_translation_tags %}
 
 {% block content %}
     <h1>Cart</h1>
@@ -19,7 +20,7 @@
         {% endfor %}
     </div>
     <div>
-        <p>Total: {{ cart.get_total_price }}</p>
+        <p>Total: {{ cart.get_total_price|intcomma:False|translate_number }}</p>
     </div>
     <br>
     <div>

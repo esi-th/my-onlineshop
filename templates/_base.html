@@ -14,6 +14,10 @@
         {% else %}
                 <p><a href="{% url 'account_login' %}">Login</a> | <a href="{% url 'account_signup' %}">SignUp</a></p>
     {% endif %}
+    <span><a href="{% url 'cart:cart_detail' %}">Cart</a></span>
+    <span><a href="{% url 'products_list' %}">Products</a></span>
+    <span><a href="{% url 'home' %}">home</a></span>
+    <br>
     {% block content %}
     {% endblock content %}
 </body>

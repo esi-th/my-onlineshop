@@ -1,0 +1,31 @@
+{% extends '_base.html' %}
+
+
+{% block title %}Create Order{% endblock %}
+
+{% block content %}
+    <h1>Create Order</h1>
+    <form action="" method="POST">
+    {% csrf_token %}
+        <label>Name: <input type="text" name="first_name"></label>
+        <br>
+        <label>Last Name: <input type="text" name="last_name"></label>
+        <br>
+        <label>Phone Number: <input type="text" name="phone_number"></label>
+        <br>
+        <label>Address Number: <input type="text" name="address"></label>
+        <br>
+        <label>Order note: <input type="text" name="order_note"></label>
+        <br>
+        <button type="submit">Proceed to checkout</button>
+        <br>
+    </form>
+    <br>
+    <ul>
+        {% for item in cart %}
+            <li>{{ item.product_obj.title }}: {{ item.product_obj.price }} * {{ item.quantity }} // {{ item.total_price }}</li>
+        {% endfor %}
+        <br>
+        <li>Total: {{ cart.get_total_price }}</li>
+    </ul>
+{% endblock %}

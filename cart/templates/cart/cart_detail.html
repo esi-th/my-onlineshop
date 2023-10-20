@@ -21,6 +21,8 @@
     </div>
     <div>
         <p>Total: {{ cart.get_total_price|intcomma:False|translate_number }}</p>
+        <br>
+        <a href="{% url 'orders:create_order' %}">Place Order</a>
     </div>
     <br>
     <div>

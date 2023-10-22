@@ -1,7 +1,12 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.decorators.http import require_POST
+from django.utils.translation import gettext as _
+from django.contrib import messages
 from django.views import generic
+
+
 from .models import Category, Comment, Product
 from .forms import NewCommentForm
 
@@ -30,6 +35,21 @@ def products_list_view(request):
         'products': products,
         'categories': categories,
     })
+
+
+@require_POST
+def product_search_view(request):
+    if request.method == 'POST':
+        product_keyword = request.POST['searched']
+        products = Product.objects.filter(title__contains=product_keyword)
+
+        if not products:
+            messages.warning(request, _('No Products Found!'))
+            return redirect('products_list')
+
+        return render(request, 'products/products_list.html', context={
+            'products': products,
+        })
 
 
 class ProductDetailView(generic.DetailView):

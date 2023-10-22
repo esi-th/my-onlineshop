@@ -145,7 +145,7 @@
                                                             {% csrf_token %}
                                                             {{ comment_form|crispy }}
                                                             <button type="submit"
-                                                                    class="btn btn-small btn-bg-red btn-color-white btn-hover-2">
+                                                                    class="oval-button">
                                                                 {% trans 'Send Comment' %}
                                                             </button>
                                                         </form>
@@ -171,21 +171,6 @@
         </div>
     </div>
     <!-- Main Content Wrapper End -->
-
-    <!-- Search form Popup Start -->
-    <div class="searchform__popup" id="searchForm">
-        <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
-        <div class="searchform__body">
-            <p>{% trans 'Enter Your Key Words In Box Below' %}</p>
-            <form class="searchform">
-                <input type="text" name="popup-search" id="popup-search" class="searchform__input"
-                       placeholder="{% trans 'Search in Products' %}">
-                <button type="submit" class="searchform__submit"><i
-                        class="flaticon flaticon-magnifying-glass-icon"></i></button>
-            </form>
-        </div>
-    </div>
-    <!-- Search form Popup End -->
 
     {% include 'cart/sidebar_cart.html' %}
 

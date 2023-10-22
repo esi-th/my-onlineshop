@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-20 08:26-0700\n"
-"PO-Revision-Date: 2023-10-20 19:11+0330\n"
-"Last-Translator: esiiiiiiii sdf234 <esi@esi.com>\n"
+"POT-Creation-Date: 2023-10-22 00:48-0700\n"
+"PO-Revision-Date: 2023-10-22 11:19+0330\n"
+"Last-Translator: غزل یوسفی <esi@esi.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +30,7 @@ msgstr "تاریخ ایجاد"
 msgid "Title"
 msgstr "عنوان"
 
-#: .\models.py:18 .\templates\products\product_detail.html:69
+#: .\models.py:18 .\templates\products\product_detail.html:67
 msgid "Product Description"
 msgstr "توضیحات محصول"
 
@@ -38,7 +38,7 @@ msgstr "توضیحات محصول"
 msgid "Price"
 msgstr "قیمت"
 
-#: .\models.py:21 .\templates\products\product_detail.html:56
+#: .\models.py:21 .\templates\products\product_detail.html:54
 msgid "Category"
 msgstr "دسته بندی"
 
@@ -99,48 +99,38 @@ msgstr "نمایش نظر"
 msgid "$"
 msgstr "تومان"
 
-#: .\templates\products\product_detail.html:51
+#: .\templates\products\product_detail.html:49
 #: .\templates\products\products_list.html:75
 msgid "Add To Cart"
 msgstr "اضافه به سبد خرید"
 
-#: .\templates\products\product_detail.html:73
+#: .\templates\products\product_detail.html:71
 msgid "Features"
 msgstr "ویژگی ها"
 
-#: .\templates\products\product_detail.html:77
+#: .\templates\products\product_detail.html:75
 msgid "Comments"
 msgstr "کامنت"
 
-#: .\templates\products\product_detail.html:107
+#: .\templates\products\product_detail.html:105
 msgid "Comments For"
 msgstr "کامنت برای"
 
-#: .\templates\products\product_detail.html:143
+#: .\templates\products\product_detail.html:141
 msgid "Write Your Comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:151
+#: .\templates\products\product_detail.html:149
 msgid "Send Comment"
 msgstr "ارسال نظر"
 
-#: .\templates\products\product_detail.html:156
+#: .\templates\products\product_detail.html:154
 msgid "You Must Be Logged In To Post A Comment"
 msgstr "برای ایجاد نظر ابتدا وارد شوید."
 
-#: .\templates\products\product_detail.html:160
+#: .\templates\products\product_detail.html:158
 msgid "Login"
 msgstr "ورود"
-
-#: .\templates\products\product_detail.html:181
-#: .\templates\products\products_list.html:118
-msgid "Enter Your Key Words In Box Below"
-msgstr "عبارت موردنظر خود را در باکس زیر وارد کنید"
-
-#: .\templates\products\product_detail.html:184
-#: .\templates\products\products_list.html:121
-msgid "Search in Products"
-msgstr "جستجو در محصولات"
 
 #: .\templates\products\products_list.html:6
 msgid "Product List"
@@ -157,3 +147,14 @@ msgstr "نمایش"
 #: .\templates\products\products_list.html:106
 msgid "From"
 msgstr "از"
+
+#: .\views.py:43
+#| msgid "Show Product"
+msgid "No Products Found!"
+msgstr "محصولی یافت نشد."
+
+#~ msgid "Enter Your Key Words In Box Below"
+#~ msgstr "عبارت موردنظر خود را در باکس زیر وارد کنید"
+
+#~ msgid "Search in Products"
+#~ msgstr "جستجو در محصولات"

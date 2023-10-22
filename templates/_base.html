@@ -134,6 +134,22 @@
 {% block content %}
 {% endblock content %}
 
+    <!-- Search form Popup Start -->
+    <div class="searchform__popup" id="searchForm">
+        <a href="#" class="btn-close"><i class="flaticon flaticon-cross"></i></a>
+        <div class="searchform__body">
+            <p>{% trans 'Enter Your Key Words In Box Below' %}</p>
+            <form class="searchform" method="POST" action="{% url 'product_search' %}">
+                {% csrf_token %}
+                <input type="text" name="searched" id="popup-search" class="searchform__input"
+                       placeholder="{% trans 'Search in Products' %}">
+                <button type="submit" class="searchform__submit"><i
+                        class="flaticon flaticon-magnifying-glass-icon"></i></button>
+            </form>
+        </div>
+    </div>
+    <!-- Search form Popup End -->
+
 <!-- Footer Start-->
 <footer class="footer">
     <div class="footer-top bg-color ptb--50" data-bg-color="#f6f6f6">

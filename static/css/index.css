@@ -114,3 +114,24 @@ button{
 .register p a:hover{
     text-decoration: underline;
 }
+/* این کدها به کد CSS شما اضافه شده‌اند */
+
+/* اضافه کردن مسیج باکس مستطیل */
+.message-box {
+    background-color: #2196F3; /* رنگ پس زمینه مسیج باکس */
+    color: #ffffff; /* رنگ متن مسیج باکس */
+    padding: 10px 20px; /* فاصله داخلی متن از لبه‌های مسیج باکس */
+    border-radius: 10px; /* گوشه‌های گرده */
+    text-align: center; /* متن وسط چین نمایش داده شود */
+    margin-bottom: 20px; /* فاصله زیر مسیج باکس */
+}
+
+/* اضافه کردن استایل به لینک درون مسیج باکس */
+.message-box a {
+    color: #ffffff; /* رنگ متن لینک */
+    text-decoration: underline; /* زیرخط روی لینک */
+}
+
+.message-box a:hover {
+    text-decoration: none; /* وقتی ماوس روی لینک هست، زیرخط نداشته باشد */
+}

@@ -1,0 +1,13 @@
+{% load account %}
+{% user_display user as user_display %}
+{% load i18n %}
+{% autoscape off %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domin %}
+
+Hello From {{ site_name }}.
+
+If You Requested This Email Please Click On The Link Below:
+{{ activate_url }}
+
+{% endblocktrans %}
+{% endautoscape %}

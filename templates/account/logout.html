@@ -14,9 +14,8 @@
                 {% csrf_token %}
                 <h2>Logout</h2>
                 <br>
-                <h3>Are You Sure?</h3>
-                <div>
-                    <label for=""><p>Are You Sure Want To Logout?</p></label>
+                <div class="register">
+                    <p>Are Your Sure Want To Logout?</p>
                 </div>
                 <br>
                 <div>
@@ -27,7 +26,6 @@
                     <br>
                     <button type="button" href=""><a href="{% url 'home' %}">Back To Home</a></button>
                 </div>
-
             </form>
         </div>
 </section>

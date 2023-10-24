@@ -90,7 +90,7 @@
                             <ul class="user-info-menu">
                                 {% if user.is_authenticated %}
                                     <li>
-                                        <a class="text-right" href="">پروفایل</a>
+                                        <a class="text-right" href="{% url 'account_dashboard' %}">پروفایل</a>
                                     </li>
                                     <li>
                                         <a class="text-right" href="{% url 'account_logout' %}">خروج</a>

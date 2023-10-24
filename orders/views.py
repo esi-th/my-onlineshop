@@ -21,9 +21,11 @@ def order_create_view(request):
         if order_form.is_valid():
             order_obj = order_form.save(commit=False)
             order_obj.user = request.user
+            cart_total_price = 0
             order_obj.save()
 
             for item in cart:
+                cart_total_price += item['quantity'] * item['product_obj'].price
                 product = item['product_obj']
                 OrderItem.objects.create(
                     order=order_obj,
@@ -31,6 +33,8 @@ def order_create_view(request):
                     quantity=item['quantity'],
                     price=product.price,
                 )
+            order_obj.price = cart_total_price
+            order_obj.save()
 
             cart.clear()
 

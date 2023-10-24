@@ -4,8 +4,17 @@ from django.conf import settings
 
 
 class Order(models.Model):
+    ORDER_STATUS_CHOICES = [
+        ('processing', _('Processing')),
+        ('Completed', _('Completed')),
+        ('no_answer', _('No Answer')),
+        ('wrong_info', _('Wrong Information')),
+    ]
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_('User'))
+    price = models.PositiveIntegerField(_('Order Total Price'), default=0)
     is_paid = models.BooleanField(_('Paid?'), default=False)
+    order_status = models.CharField(_('Order Status'), max_length=10,
+                                    choices=ORDER_STATUS_CHOICES, default='processing')
 
     first_name = models.CharField(_('First Name'), max_length=100)
     last_name = models.CharField(_('Last Name'), max_length=100)

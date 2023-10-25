@@ -53,3 +53,12 @@ class Comment(models.Model):
 
     def get_absolute_url(self):
         return reverse('product_detail', args=[self.product.id])
+
+
+class Wishlist(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_('User'))
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('Product'))
+    datetime_created = models.DateTimeField(_('Date Created'), auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.user}: {self.product}'

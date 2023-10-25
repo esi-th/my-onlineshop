@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 18:41-0700\n"
-"PO-Revision-Date: 2023-10-25 05:12+0330\n"
+"POT-Creation-Date: 2023-10-25 03:38-0700\n"
+"PO-Revision-Date: 2023-10-25 14:11+0330\n"
 "Last-Translator: erfdg sdf <esi@esi.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -64,10 +64,20 @@ msgstr "حساب ندارید؟"
 msgid "One Of Us?"
 msgstr "یکی از مایی؟"
 
-#: .\templates\accounts\dashboard.html:59
+#: .\templates\accounts\dashboard.html:60
 #: .\templates\accounts\order_detail.html:45
 msgid "$"
 msgstr "تومان"
+
+#: .\templates\accounts\dashboard.html:63
+#: .\templates\accounts\order_detail.html:35
+msgid "Successful Payment"
+msgstr "پرداخت موفقیت آمیز"
+
+#: .\templates\accounts\dashboard.html:67
+#: .\templates\accounts\order_detail.html:37
+msgid "Payment Failed"
+msgstr "پرداخت ناموفق"
 
 #: .\templates\accounts\order_detail.html:24
 msgid "Order Number"
@@ -84,14 +94,6 @@ msgstr "وضعیت پرداخت"
 #: .\templates\accounts\order_detail.html:27
 msgid "Order Status"
 msgstr "وضعیت سفارش"
-
-#: .\templates\accounts\order_detail.html:35
-msgid "Successful Payment"
-msgstr "پرداخت موفقیت آمیز"
-
-#: .\templates\accounts\order_detail.html:37
-msgid "Payment Failed"
-msgstr "پرداخت ناموفق"
 
 #: .\templates\accounts\order_detail.html:44
 msgid "Total"
@@ -113,13 +115,39 @@ msgstr "قیمت نهایی"
 msgid "Back to Dashbord"
 msgstr "بازگشت به داشبورد"
 
-#: .\views.py:24
+#: .\views.py:25
 msgid "Password Changed Successfully!"
 msgstr "رمز عبور شما با موفقیت تغییر کرد."
 
-#: .\views.py:27
+#: .\views.py:28
 msgid "Invalid Password! Please Check Your Input And Try Again"
 msgstr "رمز عبور نامعتبر! لطفا ورودی های خود را چک کرده و مجددا تلاش کنید."
+
+#: .\views.py:53
+msgid "Product Already Is In Your Wishlist!"
+msgstr "این محصول درحال حاضر در لیست علاقه مندی شما وجود دارد!"
+
+#: .\views.py:56
+msgid "Product Has Successfully Added To Your Wishlist."
+msgstr "محصول با موفقیت به لیست علاقه مندی شما اضافه شد."
+
+#: .\views.py:58
+msgid "No Such Product Found!"
+msgstr "محصولی یافت نشد!"
+
+#: .\views.py:60 .\views.py:73
+msgid "First You Need To Login For Add Product To Your Wishlist"
+msgstr ""
+"برای اضافه کردن محصول به لیست علاقه مندی ابتدا باید وارد حساب خود شوید."
+
+#: .\views.py:69
+#| msgid "Product Has Successfully Added To Your Wishlist."
+msgid "Product Has Successfully Removed From Your Wishlist."
+msgstr "محصول با موفقیت از لیست علاقه مندی شما حذف شد."
+
+#: .\views.py:71
+msgid "No Such Product Found In Your Wishlist"
+msgstr "این محصول در لیست علاقه مندی شما یافت نشد!"
 
 #~ msgid "Processing"
 #~ msgstr "در حال پردازش"

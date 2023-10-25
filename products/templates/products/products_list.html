@@ -49,7 +49,7 @@
                                                             </a>
                                                             <div class="ShoppingYar-product-action">
                                                                 <div class="product-action d-flex">
-                                                                    <a href="" class="action-btn">
+                                                                    <a href="{% url 'wishlist_add' product.id %}" class="action-btn">
                                                                         <i class="flaticon flaticon-like"></i>
                                                                     </a>
                                                                 </div>
@@ -103,7 +103,7 @@
                             </nav>
                             <div class="row justify-content-center">
                                 <p class="product-pages"> {% trans "Show" %} {{ products.number|translate_number }}
-                                    {% trans 'From' %} {{ products.end_index|translate_number }}</p>
+                                    {% trans 'From' %} {{ products.paginator.num_pages|translate_number }}</p>
                             </div>
                         </div>
                     </div>

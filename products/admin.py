@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, Comment
+from .models import Category, Product, Comment, Wishlist
 
 
 class CommentInlines(admin.TabularInline):
@@ -25,3 +25,8 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ['author', 'product', 'stars', 'datetime_created', 'active', ]
+
+
+@admin.register(Wishlist)
+class WishListAdmin(admin.ModelAdmin):
+    list_display = ['user', 'product', 'datetime_created']

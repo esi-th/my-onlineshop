@@ -47,20 +47,30 @@
                                                     <th>تاریخ</th>
                                                     <th>وضعیت</th>
                                                     <th>جمع کل</th>
+                                                    <th>وضعیت پرداخت</th>
                                                     <th>عملیات</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 {% for order in orders %}
-                                                <tr>
-                                                    <td>{{ order.id|translate_number }}</td>
-                                                    <td class="wide-column">{{ order.datetime_created|to_jalali:'%Y %B %d'|translate_number }}</td>
-                                                    <td>{{ order.order_status }}</td>
-                                                    <td class="wide-column">{{ order.price|intcomma:False|translate_number }} {% trans '$' %}</td>
-                                                    <td><a href="product-details.html"
-                                                           class="oval-button">نمایش</a>
-                                                    </td>
-                                                </tr>
+                                                    <tr>
+                                                        <td>{{ order.id|translate_number }}</td>
+                                                        <td>{{ order.datetime_created|to_jalali:'%Y %B %d'|translate_number }}</td>
+                                                        <td>{{ order.order_status }}</td>
+                                                        <td>{{ order.price|intcomma:False|translate_number }} {% trans '$' %}</td>
+                                                        {% if order.is_paid %}
+                                                            <th><i
+                                                                    class="fa fa-check"> {% trans 'Successful Payment' %}</i>
+                                                            </th>
+                                                        {% else %}
+                                                            <th><i
+                                                                    class="fa fa-times"> {% trans 'Payment Failed' %}</i>
+                                                            </th>
+                                                        {% endif %}
+                                                        <td><a href="{% url 'order_detail' order.id %}"
+                                                               class="oval-button">نمایش</a>
+                                                        </td>
+                                                    </tr>
                                                 {% endfor %}
                                                 </tbody>
                                             </table>
@@ -103,13 +113,16 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="accountdetails">
-                                        <form action="#" class="form form--account">
+                                        <form action="{% url 'account_dashboard' %}" method="POST"
+                                              class="form form--account">
+                                            {% csrf_token %}
                                             <div class="row grid-space-30 mb--20">
                                                 <div class="col-md-6 mb-sm--20">
                                                     <div class="form__group">
                                                         <label class="form__label form__label--2" for="f_name">نام <span
                                                                 class="required">*</span></label>
-                                                        <input value="{{ user.first_name }}" type="text" name="f_name" id="f_name"
+                                                        <input value="{{ user.first_name }}" type="text" name="f_name"
+                                                               id="f_name"
                                                                class="form__input">
                                                     </div>
                                                 </div>
@@ -117,7 +130,8 @@
                                                     <div class="form__group">
                                                         <label class="form__label form__label--2" for="l_name">نام
                                                             خانوادگی <span class="required">*</span></label>
-                                                        <input value="{{ user.last_name }}" type="text" name="l_name" id="l_name"
+                                                        <input value="{{ user.last_name }}" type="text" name="l_name"
+                                                               id="l_name"
                                                                class="form__input">
                                                     </div>
                                                 </div>
@@ -127,7 +141,8 @@
                                                     <div class="form__group">
                                                         <label class="form__label form__label--2" for="email">ایمیل
                                                             <span class="required">*</span></label>
-                                                        <input value="{{ user.email }}" type="email" name="email" id="email" class="form__input">
+                                                        <input value="{{ user.email }}" type="email" name="email"
+                                                               id="email" class="form__input">
                                                     </div>
                                                 </div>
                                             </div>
@@ -139,7 +154,7 @@
                                                             <label class="form__label form__label--2" for="cur_pass">پسورد
                                                                 فعلی (اگر نمیخواهید پسورد خود را عوض کنید این بخش را
                                                                 خالی بگذارید)</label>
-                                                            <input type="password" name="cur_pass" id="cur_pass"
+                                                            <input type="password" name="old_password" id="cur_pass"
                                                                    class="form__input">
                                                         </div>
                                                     </div>
@@ -150,7 +165,7 @@
                                                             <label class="form__label form__label--2" for="new_pass">پسورد
                                                                 جدید (اگر نمیخواهید پسورد خود را عوض کنید این بخش را
                                                                 خالی بگذارید)</label>
-                                                            <input type="password" name="new_pass" id="new_pass"
+                                                            <input type="password" name="new_password1" id="new_pass"
                                                                    class="form__input">
                                                         </div>
                                                     </div>
@@ -160,7 +175,7 @@
                                                         <div class="form__group">
                                                             <label class="form__label form__label--2"
                                                                    for="conf_new_pass">تایید پسورد جدید</label>
-                                                            <input type="password" name="conf_new_pass"
+                                                            <input type="password" name="new_password2"
                                                                    id="conf_new_pass" class="form__input">
                                                         </div>
                                                     </div>
@@ -170,7 +185,7 @@
                                                 <div class="col-12">
                                                     <div class="form__group">
                                                         <input type="submit" value="ذخیره تغییرات"
-                                                               class="btn btn-style-1 btn-submit">
+                                                               class="oval-button">
                                                     </div>
                                                 </div>
                                             </div>

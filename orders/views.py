@@ -7,7 +7,7 @@ from cart.cart import Cart
 from .models import OrderItem
 
 
-@login_required
+@login_required(login_url='accounts_hub')
 def order_create_view(request):
     cart = Cart(request)
 
@@ -41,6 +41,5 @@ def order_create_view(request):
             request.user.first_name = order_obj.first_name
             request.user.last_name = order_obj.last_name
             request.user.save()
-
 
     return render(request, 'orders/create_order.html')

@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-20 08:24-0700\n"
-"PO-Revision-Date: 2023-10-20 19:28+0330\n"
-"Last-Translator: غزل یوسفی <esi@esi.com>\n"
+"POT-Creation-Date: 2023-10-24 18:41-0700\n"
+"PO-Revision-Date: 2023-10-25 05:12+0330\n"
+"Last-Translator: erfdg sdf <esi@esi.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,42 +24,111 @@ msgstr "حساب ها"
 
 #: .\templates\accounts\account_hub.html:23
 #: .\templates\accounts\account_hub.html:32
-#: .\templates\accounts\account_hub.html:104
+#: .\templates\accounts\account_hub.html:107
 msgid "Login"
 msgstr "ورود"
 
 #: .\templates\accounts\account_hub.html:26
-#: .\templates\accounts\account_hub.html:54
+#: .\templates\accounts\account_hub.html:55
 msgid "Email"
 msgstr "ایمیل"
 
 #: .\templates\accounts\account_hub.html:30
-#: .\templates\accounts\account_hub.html:58
+#: .\templates\accounts\account_hub.html:59
 msgid "Password"
 msgstr "رمز عبور"
 
-#: .\templates\accounts\account_hub.html:33
+#: .\templates\accounts\account_hub.html:34
 msgid "Login With Social Media"
 msgstr "ورود با شبکه های اجتمایی"
 
-#: .\templates\accounts\account_hub.html:51
-#: .\templates\accounts\account_hub.html:64
-#: .\templates\accounts\account_hub.html:92
+#: .\templates\accounts\account_hub.html:52
+#: .\templates\accounts\account_hub.html:67
+#: .\templates\accounts\account_hub.html:95
 msgid "Register"
 msgstr "ثبت نام"
 
-#: .\templates\accounts\account_hub.html:62
+#: .\templates\accounts\account_hub.html:64
 msgid "I agree to the terms & conditions"
 msgstr "شرایط را خوانده و قبول دارم"
 
-#: .\templates\accounts\account_hub.html:65
+#: .\templates\accounts\account_hub.html:68
 msgid "Register With Social Media"
 msgstr "ثبت نام با شبکه های اجتمایی"
 
-#: .\templates\accounts\account_hub.html:87
+#: .\templates\accounts\account_hub.html:90
 msgid "New here ?"
 msgstr "حساب ندارید؟"
 
-#: .\templates\accounts\account_hub.html:99
+#: .\templates\accounts\account_hub.html:102
 msgid "One Of Us?"
 msgstr "یکی از مایی؟"
+
+#: .\templates\accounts\dashboard.html:59
+#: .\templates\accounts\order_detail.html:45
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\accounts\order_detail.html:24
+msgid "Order Number"
+msgstr "شماره سفارش"
+
+#: .\templates\accounts\order_detail.html:25
+msgid "Date Created"
+msgstr "تاریخ ایجاد"
+
+#: .\templates\accounts\order_detail.html:26
+msgid "Is_Paid?"
+msgstr "وضعیت پرداخت"
+
+#: .\templates\accounts\order_detail.html:27
+msgid "Order Status"
+msgstr "وضعیت سفارش"
+
+#: .\templates\accounts\order_detail.html:35
+msgid "Successful Payment"
+msgstr "پرداخت موفقیت آمیز"
+
+#: .\templates\accounts\order_detail.html:37
+msgid "Payment Failed"
+msgstr "پرداخت ناموفق"
+
+#: .\templates\accounts\order_detail.html:44
+msgid "Total"
+msgstr "جمع کل"
+
+#: .\templates\accounts\order_detail.html:58
+msgid "Product"
+msgstr "محصول"
+
+#: .\templates\accounts\order_detail.html:59
+msgid "Quantity"
+msgstr "تعداد"
+
+#: .\templates\accounts\order_detail.html:60
+msgid "The Final Price"
+msgstr "قیمت نهایی"
+
+#: .\templates\accounts\order_detail.html:82
+msgid "Back to Dashbord"
+msgstr "بازگشت به داشبورد"
+
+#: .\views.py:24
+msgid "Password Changed Successfully!"
+msgstr "رمز عبور شما با موفقیت تغییر کرد."
+
+#: .\views.py:27
+msgid "Invalid Password! Please Check Your Input And Try Again"
+msgstr "رمز عبور نامعتبر! لطفا ورودی های خود را چک کرده و مجددا تلاش کنید."
+
+#~ msgid "Processing"
+#~ msgstr "در حال پردازش"
+
+#~ msgid "Completed"
+#~ msgstr "تکمیل شده"
+
+#~ msgid "No Answer"
+#~ msgstr "عدم پاسخ به تماس پشتیبان"
+
+#~ msgid "Wrong Information"
+#~ msgstr "اطلاعات اشتباه"

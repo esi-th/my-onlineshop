@@ -1,0 +1,88 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load persian_translation_tags %}
+{% load jalali_tags %}
+{% load humanize %}
+{% load i18n %}
+
+{% block title %}Order Detail{% endblock title %}
+
+{% block content %}
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+        <!-- Main Content Wrapper Start -->
+        <div class="main-content-wrapper">
+            <div class="page-content-inner ptb--80">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="table-content table-responsive mb--15">
+                                <h3>فاکتور</h3>
+                                <table class="table order-table order-table-2">
+                                    <thead>
+                                    <tr>
+                                        <th>{% trans 'Order Number' %}</th>
+                                        <th class="text-right">{% trans 'Date Created' %}</th>
+                                        <th class="text-right">{% trans 'Is_Paid?' %}</th>
+                                        <th class="text-left">{% trans 'Order Status' %}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th>{{ order.id|translate_number }}</th>
+                                        <th class="text-right">{{ order.datetime_created|to_jalali:'%Y %B %d'|translate_number }}</th>
+                                        {% if order.is_paid %}
+                                        <th class="text-right"><i class="fa fa-check"> {% trans 'Successful Payment' %}</i></th>
+                                            {% else %}
+                                            <th class="text-right"><i class="fa fa-times"> {% trans 'Payment Failed' %}</i></th>
+                                        {% endif %}
+                                        <td class="text-left">{{ order.order_status }}</td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr class="cart-subtotal">
+                                        <th>{% trans 'Total' %}</th>
+                                        <td class="text-right">{{ order.price|intcomma:False|translate_number }} {% trans '$' %}</td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="user-dashboard-tab flex-column flex-md-row">
+                                <div class="table-content table-responsive mb--30">
+                                    <h3>لیست محصولات سفارش</h3>
+                                    <table class="table order-table order-table-2">
+                                        <thead>
+                                        <tr>
+                                            <th>{% trans 'Product' %}</th>
+                                            <th class="text-left">{% trans 'Quantity' %}</th>
+                                            <th class="text-left">{% trans 'The Final Price' %}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for item in order.items.all %}
+                                            <tr>
+                                                <th>{{ item.product }}</th>
+                                                <th class="text-left">{{ item.quantity|translate_number }}</th>
+                                                <td class="text-left">{{ item.price|intcomma:False|translate_number }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                        <tfoot>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    {{ change }}
+                    <a href="{% url 'account_dashboard' %}">
+                        <button class="oval-button">{% trans 'Back to Dashbord' %}</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content Wrapper Start -->
+{% endblock content %}

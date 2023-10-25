@@ -6,7 +6,7 @@ from django.conf import settings
 class Order(models.Model):
     ORDER_STATUS_CHOICES = [
         ('processing', _('Processing')),
-        ('Completed', _('Completed')),
+        ('completed', _('Completed')),
         ('no_answer', _('No Answer')),
         ('wrong_info', _('Wrong Information')),
     ]

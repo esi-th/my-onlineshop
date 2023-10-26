@@ -9,7 +9,7 @@ class PostListView(generic.ListView):
     paginate_by = 4
 
     def get_queryset(self):
-        return Post.objects.filter(status='pub')
+        return Post.objects.filter(status='pub').order_by('datetime_created')
 
 
 class PostDetailView(generic.DetailView):

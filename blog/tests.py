@@ -67,3 +67,11 @@ class PostTest(TestCase):
         self.assertContains(response, self.post1.title)
         self.assertContains(response, self.post1.author)
         self.assertContains(response, self.post1.text)
+
+    def test_post_model_str(self):
+        post = self.post1
+        self.assertEqual(str(post), post.title)
+
+    def test_post_detail(self):
+        self.assertEqual(self.post1.title, 'post1')
+        self.assertEqual(self.post1.text, 'abc')

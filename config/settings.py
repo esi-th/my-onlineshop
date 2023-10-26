@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('DOCKER_COMPOSE_DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DJANGO_DEBUG')
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'persian_translate.apps.PersianTranslateConfig',
     'orders.apps.OrdersConfig',
     'blog.apps.BlogConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -197,3 +198,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # crispy
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# zarinpal
+ZARINPAL_MERCHANT_ID = env('DJANGO_ZA_MERCHANT_ID')

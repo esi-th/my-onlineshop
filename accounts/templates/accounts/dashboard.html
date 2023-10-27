@@ -19,6 +19,8 @@
                             <div class="user-dashboard-tab flex-column flex-md-row">
                                 <div class="user-dashboard-tab__head nav flex-md-column" role="tablist"
                                      aria-orientation="vertical">
+                                    <img src="{{ request.user.profile_picture.url }}"
+                                         alt="">
                                     <a class="nav-link active" data-toggle="pill" role="tab" href="#dashboard"
                                        aria-controls="dashboard" aria-selected="true">پیشخوان</a>
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#orders"

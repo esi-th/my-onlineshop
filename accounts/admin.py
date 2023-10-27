@@ -8,4 +8,10 @@ from .forms import CustomUserChangeForm, CustomUserCreationForm
 class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     add_form = CustomUserCreationForm
-    list_display = ['username', 'email', ]
+    list_display = ['username', 'email']
+    add_fieldsets = UserAdmin.fieldsets + (
+        (None, {'fields': ('profile_picture',)}),
+    )
+    fieldsets = UserAdmin.fieldsets + (
+        (None, {'fields': ('profile_picture',)}),
+    )

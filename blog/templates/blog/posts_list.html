@@ -69,27 +69,28 @@
                                     </div>
                             </div>
                         </div>
-                        <nav class="pagination-wrap mt--35 mt-md--25 pb-5">
-                            <ul class="pagination">
-                                {% if posts.has_previous %}
-                                    <li><a href="{% url 'products_list' %}?page={{ posts.previous_page_number }}"
-                                           class="prev page-number"><i class="fa fa-angle-double-right"></i></a>
-                                    <li><span class="current page-number">{{ posts.previous_page_number }}</span>
-                                    </li>
-                                {% endif %}
-                                <li><span class="current page-number">{{ posts.number }}</span></li>
-                                {% if posts.has_next %}
-                                    <li><span class="current page-number">{{ posts.next_page_number }}
-                                    </li>
-                                    <li><a href="{% url 'products_list' %}?page={{ posts.next_page_number }}"
-                                           class="next page-number"><i class="fa fa-angle-double-left"></i></a>
-                                    </li>
-                                {% endif %}
-                            </ul>
-                        </nav>
-                        </li>
-                        </ul>
-                        </nav>
+                            <nav class="pagination-wrap mt--35 mt-md--25 pb-5">
+                                <ul class="pagination">
+                                    {% if page_obj.has_previous %}
+                                        <li><a href="{% url 'products_list' %}?page={{ page_obj.previous_page_number }}"
+                                               class="prev page-number"><i class="fa fa-angle-double-right"></i></a>
+                                        <li><span class="current page-number">{{ page_obj.previous_page_number|translate_number }}</span>
+                                        </li>
+                                    {% endif %}
+                                    <li><span class="current page-number">{{ page_obj.number|translate_number }}</span></li>
+                                    {% if page_obj.has_next %}
+                                        <li><span class="current page-number">{{ page_obj.next_page_number|translate_number }}
+                                        </li>
+                                        <li><a href="{% url 'products_list' %}?page={{ page_obj.next_page_number }}"
+                                               class="next page-number"><i class="fa fa-angle-double-left"></i></a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                            <div class="row justify-content-center">
+                                <p class="product-pages"> {% trans "Show" %} {{ page_obj.number|translate_number }}
+                                    {% trans 'From' %} {{ page_obj.paginator.num_pages|translate_number }}</p>
+                            </div>
                     </div>
                 </div>
             </div>

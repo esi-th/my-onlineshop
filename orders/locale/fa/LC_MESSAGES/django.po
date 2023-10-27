@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-24 10:01-0700\n"
-"PO-Revision-Date: 2023-10-25 04:53+0330\n"
-"Last-Translator: erfdg sdf <esi@esi.com>\n"
+"POT-Creation-Date: 2023-10-27 08:32-0700\n"
+"PO-Revision-Date: 2023-10-27 19:03+0330\n"
+"Last-Translator: aaa ssssssssss <esi@esi.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,11 +50,6 @@ msgstr "وضعیت پرداخت"
 msgid "Order Status"
 msgstr "وضعیت سفارش"
 
-#: .\models.py:17
-#| msgid "Processing"
-msgid "processing"
-msgstr "در حال پردازش"
-
 #: .\models.py:19
 msgid "First Name"
 msgstr "نام "
@@ -87,7 +82,7 @@ msgstr ""
 msgid "Zarinpal Response Data"
 msgstr ""
 
-#: .\models.py:30 .\models.py:44
+#: .\models.py:30 .\models.py:47
 msgid "Date Created"
 msgstr "تاریخ ایجاد سفارش"
 
@@ -95,15 +90,15 @@ msgstr "تاریخ ایجاد سفارش"
 msgid "Date Modified"
 msgstr "تاریخ تغییر"
 
-#: .\models.py:40
+#: .\models.py:43
 msgid "Order Items"
 msgstr "محصول"
 
-#: .\models.py:41 .\templates\orders\create_order.html:82
+#: .\models.py:44 .\templates\orders\create_order.html:82
 msgid "Quantity"
 msgstr "تعداد"
 
-#: .\models.py:42
+#: .\models.py:45
 msgid "Price"
 msgstr "قیمت"
 
@@ -162,6 +157,13 @@ msgstr "درگاه پرداخت زرین پال"
 #: .\views.py:15
 msgid "Your Cart Is Empty! You Have To Add Some Products To Your Cart First."
 msgstr "سبد خرید شما خالی است! ابتدا محصولی به سبد خرید خود اضافه کنید."
+
+#: .\views.py:47
+msgid "Your Order Placed Successfully!"
+msgstr "سفارش شما با موفقیت ثبت شد."
+
+#~ msgid "processing"
+#~ msgstr "در حال پردازش"
 
 #~ msgid "Enter Your Key Words In Box Below"
 #~ msgstr "عبارت موردنظر خود را در باکس زیر وارد کنید"

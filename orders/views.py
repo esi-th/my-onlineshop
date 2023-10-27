@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.utils.translation import gettext as _
 from django.contrib import messages
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from .forms import OrderForm
 from cart.cart import Cart
 from .models import OrderItem
@@ -43,6 +43,11 @@ def order_create_view(request):
             request.user.save()
 
             request.session['order_id'] = order_obj.id
-            return redirect('payment:payment_process')
+
+            messages.success(request, _('Your Order Placed Successfully!'))
+            return redirect(reverse('order_detail', args=[order_obj.id]))
+
+            # redirect to payment gateway
+            # return redirect('payment:payment_process')
 
     return render(request, 'orders/create_order.html')

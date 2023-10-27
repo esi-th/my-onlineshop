@@ -15,7 +15,7 @@ def products_list_view(request):
     category = request.GET.get('category')
 
     if category is not None:
-        products = Product.objects.filter(category__name=category)
+        products = Product.objects.filter(category__name=category).order_by('-datetime_modified')
     else:
         products = Product.objects.all().order_by('-datetime_created')
 
@@ -41,7 +41,7 @@ def products_list_view(request):
 def product_search_view(request):
     if request.method == 'POST':
         product_keyword = request.POST['searched']
-        products = Product.objects.filter(title__contains=product_keyword)
+        products = Product.objects.filter(title__contains=product_keyword).order_by('-datetime_modified')
 
         if not products:
             messages.warning(request, _('No Products Found!'))
